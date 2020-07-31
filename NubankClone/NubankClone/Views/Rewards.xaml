@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="NubankClone.Views.Rewards">
+  <ContentView.Content>
+        <StackLayout Padding="20, 0">
+            <Frame BackgroundColor="White" 
+                   Padding="30" 
+                   HasShadow="True"
+                   CornerRadius="5"
+                   HeightRequest="350">
+                <StackLayout>
+                    <Label Text="&#xf06b;"
+                           FontSize="30"
+                           FontFamily="{StaticResource FontAwesomeSolid}"
+                           HorizontalOptions="Center"/>
+
+                    <StackLayout VerticalOptions="CenterAndExpand">
+                        <Label Text="Nubank Rewards"
+                               TextColor="Black"
+                               FontSize="Large"
+                               FontAttributes="Bold"
+                               HorizontalTextAlignment="Center"/>
+                        <Label Text="Acumule pontos que nunca expiram e troque por passagens aéreas ou serviços que você realmente usa."
+                               FontSize="Medium"
+                               HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+
+                    <Button Text="ATIVE O SEU REWARDS"
+                            TextColor="#7f269d"
+                            BackgroundColor="White"
+                            BorderColor="#7f269d"
+                            BorderWidth="1"
+                            Padding="40, 0"
+                            HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>

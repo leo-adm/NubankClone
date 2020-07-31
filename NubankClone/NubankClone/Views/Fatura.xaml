@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="NubankClone.Views.Fatura">
+    <ContentView.Content>
+        <StackLayout Padding="20, 0">
+            <Frame BackgroundColor="White" 
+                   Padding="0" 
+                   HasShadow="True"
+                   CornerRadius="5"
+                   HeightRequest="350">
+                <Grid Padding="0" RowSpacing="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+
+                    <StackLayout Padding="25">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="&#xf09d;"
+                                   FontSize="Medium"
+                                   FontFamily="{StaticResource FontAwesomeSolid}"
+                                   Margin="0,0,5,0"/>
+                            <Label Text="Cartão de crédito"/>
+                            <Label Text="{Binding IconeVisibilidade}"
+                                   FontSize="Medium"
+                                   FontFamily="{StaticResource FontAwesomeSolid}"
+                                   HorizontalOptions="EndAndExpand">
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding AlternarVisibilidade}"/>
+                                </Label.GestureRecognizers>
+                            </Label>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Horizontal" VerticalOptions="CenterAndExpand">                            
+                            <StackLayout Spacing="0">
+                                <Label Text="FATURA ATUAL"
+                                       TextColor="LightSeaGreen"
+                                       FontAttributes="Bold"/>
+                                <StackLayout Spacing="3">                                    
+                                    <Label Text="R$ 1.900,00"
+                                           TextColor="{Binding CorFatura}"
+                                           Padding="0, -5"
+                                           BackgroundColor="{Binding CorFundoFatura}"
+                                           FontAttributes="Bold"
+                                           FontSize="32"/>
+                                    <StackLayout Orientation="Horizontal" BackgroundColor="{Binding CorFundoFatura}">
+                                        <Label Text="Limite disponível"
+                                               TextColor="{Binding CorTextoLimite}"/>
+                                        <Label Text="R$ 3.000,00"
+                                               TextColor="{Binding CorValorLimite}"
+                                               FontAttributes="Bold"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </StackLayout>
+                    <BoxView BackgroundColor="LightGreen"
+                             Grid.Column="1"/>
+
+                    <StackLayout Grid.Row="1"
+                                 Grid.ColumnSpan="2"
+                                 BackgroundColor="#F2F2F2"
+                                 Padding="15, 20"
+                                 Orientation="Horizontal"
+                                 Spacing="20">
+                        <Label Text="&#xf09d;"
+                               VerticalOptions="CenterAndExpand"
+                               FontFamily="{StaticResource FontAwesomeSolid}"/>
+                        <Label Text="Compra em Mc Donalds Anp de R$30,00 no débito sábado"/>
+                        <Label Text=">"
+                               VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+        </StackLayout>
+    </ContentView.Content>
+</ContentView>
